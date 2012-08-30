@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :load_configuration
   before_filter :set_time_zone
-  before_filter :detect_mobile
+  #before_filter :detect_mobile
   before_filter :set_section
   before_filter :set_theme
 

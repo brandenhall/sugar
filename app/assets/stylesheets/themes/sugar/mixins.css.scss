@@ -1,0 +1,40 @@
+$font-size:       16;
+$small-font-size: 13;
+$line-height:     $font-size * 1.4;
+$column-width:    60;
+$gutter-width:    16;
+$rem:             $font-size / 1rem;
+
+// Colors
+$text-color:    #121010;
+$border-color:  #E2DCBF;
+$action-color:  #9F0000;
+$link-color:    #005794;
+$visited-color: #3900A2;
+
+@mixin font-size($size: $font-size) {
+  font-size: $size + px;
+  font-size: $size / $rem;
+}
+
+@mixin line-height($height: $line-height) {
+  line-height: $height + px;
+  line-height: $height / $rem;
+}
+
+@mixin rem-size($property, $size) {
+  #{$property}: $size * 1px;
+  #{$property}: $size / $rem;
+}
+
+@function column-width($columns) {
+  @return ($columns * ($column-width + $gutter-width) - $gutter-width);
+}
+
+@mixin columns($columns: 1) {
+  @include rem-size(width, column-width($columns));
+  @include rem-size(margin-left, $gutter-width);
+  display: block;
+  float: left;
+  position: relative;
+}

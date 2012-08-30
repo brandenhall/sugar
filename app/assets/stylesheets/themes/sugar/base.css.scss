@@ -1,0 +1,15 @@
+@import 'mixins';
+
+// Base font size
+html, body {
+  font-family: Calibri, Trebuchet MS, Arial, Verdana, sans-serif;
+  color:       $text-color;
+}
+
+a, a:visited {
+  color: $action-color;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: darken($action-color, 80%);
+}

@@ -36,7 +36,7 @@
     <% end %>
 
     <% if functions %>
-      <div class="post_functions"></div>
+      <div class="actions"></div>
     <% end %>
 
     <% if post.me_post? %>
@@ -53,7 +53,7 @@
       </div>
 
     <% else %>
-      <div class="post_info">
+      <div class="info">
         <a name="post-<%= post.id %>" class="anchor"></a>
         <span class="avatar">
           <%= avatar_image_tag(post.user) %>

@@ -1,0 +1,89 @@
+@import 'mixins';
+
+.posts {
+  border-bottom: 1px solid $border-color;
+}
+
+.post {
+  border-top: 1px solid $border-color;
+
+  @include rem-size(padding-top, $gutter-width);
+  @include rem-size(padding-bottom, $gutter-width);
+
+  .username {
+    font-weight: bold;
+  }
+
+  .date {
+    @include font-size($small-font-size);
+    color: lighten($text-color, 40%);
+  }
+
+  .permalink {
+    @include font-size($small-font-size);
+    a {
+      color: lighten($text-color, 60%);
+    }
+  }
+
+  .body {
+    @include rem-size(max-width, column-width(10));
+    a {
+      color: $link-color;
+      text-decoration: underline;
+    }
+    a:visited {
+      color: $visited-color;
+    }
+    a:hover, a:active {
+      color: darken($link-color, 20%);
+    }
+    .edited {
+      color: lighten($text-color, 40%);
+      @include rem-size(margin-top, $small-font-size);
+      @include font-size($small-font-size);
+    }
+  }
+
+  // Mobile
+  @media screen and (min-width: 12.5em) {
+    .avatar {
+      @include rem-size(margin-right, $gutter-width / 4);
+      img {
+        vertical-align: -15%;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: 40em) {
+    .avatar {
+      float: left;
+      text-align: right;
+      @include rem-size(width, column-width(1));
+      @include rem-size(margin-left, 1 - (column-width(1) + $gutter-width));
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .username {
+      @include rem-size(margin-right, $gutter-width / 4);
+    }
+    .body, .info {
+      @include rem-size(margin-left, (column-width(1) + $gutter-width));
+    }
+  }
+}
+
+.post_distance {
+  color: lighten($text-color, 40%);
+  border-top: 1px solid $border-color;
+  @include rem-size(padding-top, $gutter-width / 4);
+  @include rem-size(padding-bottom, $gutter-width / 4);
+  @media screen and (min-width: 40em) {
+    @include rem-size(padding-left, (column-width(1) + $gutter-width));
+  }
+}

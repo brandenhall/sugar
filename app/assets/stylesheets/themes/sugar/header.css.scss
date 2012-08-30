@@ -1,0 +1,9 @@
+@import 'mixins';
+
+header {
+  background: rgba(50, 50, 50, 0.2);
+  @include rem-size(margin-bottom, $gutter-width);
+  li {
+    display: inline;
+  }
+}
